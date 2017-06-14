@@ -14,7 +14,7 @@
     -q
     --style json
   register: groupcmd
-  always_run: yes
+  check_mode: no
   changed_when: False
 
 - name: omero user | set group list var
@@ -33,7 +33,7 @@
     {{ item.name | quote }}
     --type {{ item.type }}
   when: >
-    {{ omero_group_list | selectattr('name', 'equalto', item.name) |
-      list | length }} < 1
+    (omero_group_list | selectattr('name', 'equalto', item.name) |
+      list | length) < 1
   with_items:
   - "{{ omero_group_create }}"
