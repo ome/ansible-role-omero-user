@@ -1,6 +1,9 @@
 OMERO user
 ==========
 
+[![Build Status](https://travis-ci.org/ome/ansible-role-omero-user.svg)](https://travis-ci.org/ome/ansible-role-omero-user)
+[![Ansible Role](https://img.shields.io/ansible/role/41042.svg)](https://galaxy.ansible.com/ome/omero_user/)
+
 Create OMERO user accounts and groups.
 This will not modify existing users or groups, apart from the user password if `force` is set.
 
@@ -8,7 +11,7 @@ This will not modify existing users or groups, apart from the user password if `
 Dependencies
 ------------
 
-Assumes the `omero-server` role is installed with defaults, if not you will have to set most of the role variables below.
+Assumes the `ome.omero_server` role is installed with defaults, if not you will have to set most of the role variables below.
 
 This requires features present in OMERO 5.X.
 
@@ -50,7 +53,7 @@ Create the user account `public` and group `demo` if it doesn't exist
 
     - hosts: omero-servers
       roles:
-      - omero-user
+      - ome.omero_user
       vars:
       - omero_group_create:
         - name: demo
@@ -66,7 +69,7 @@ Reset the OMERO `root` password:
 
     - hosts: omero-servers
       roles:
-      - omero-user
+      - ome.omero_user
       vars:
       - omero_user_reset_root_password: "omero root password"
       #- omero_user_dbhost: localhost
