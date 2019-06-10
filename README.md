@@ -2,7 +2,7 @@ OMERO user
 ==========
 
 [![Build Status](https://travis-ci.org/ome/ansible-role-omero-user.svg)](https://travis-ci.org/ome/ansible-role-omero-user)
-[![Ansible Role](https://img.shields.io/ansible/role/41042.svg)](https://galaxy.ansible.com/ome/omero_user/)
+[![Ansible Role](https://img.shields.io/ansible/role/41097.svg)](https://galaxy.ansible.com/ome/omero_user/)
 
 Create OMERO user accounts and groups.
 This will not modify existing users or groups, apart from the user password if `force` is set.
