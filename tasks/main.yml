@@ -5,10 +5,10 @@
   when: "omero_user_reset_root_password | length > 0"
 
 - include: groups.yml
-  when: omero_group_create
+  when: "omero_group_create | length > 0"
 
 - include: users.yml
-  when: omero_user_create
+  when: "omero_user_create | length > 0"
 
 - include: reset-password.yml
-  when: omero_user_create
+  when: "omero_user_create | length > 0"
