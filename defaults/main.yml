@@ -1,7 +1,7 @@
 ---
 # defaults file for roles/omero-user
 
-omero_user_bin_omero: /home/omero/OMERO.server/bin/omero
+omero_user_bin_omero: /opt/omero/server/OMERO.server/bin/omero
 omero_user_system: omero
 omero_user_admin_user: root
 omero_user_admin_pass: omero

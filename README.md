@@ -22,7 +22,7 @@ Role Variables
 All variables are optional, see `defaults/main.yml`
 
 Create OMERO user accounts and groups:
-- `omero_user_bin_omero`: The full path to `bin/omero` application, default `/home/omero/OMERO.server/bin/omero`
+- `omero_user_bin_omero`: The full path to `bin/omero` application, default `/opt/omero/server/OMERO.server/bin/omero`
 - `omero_user_system`: Run the `omero` CLI as this user, default `omero` (must not be `root`)
 - `omero_user_admin_user`: Login to OMERO as this admin user, default `root`
 - `omero_user_admin_pass`: Password for `omero_user_admin_user`
