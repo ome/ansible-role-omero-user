@@ -3,7 +3,7 @@
 
 # Always run including in check mode
 - name: omero user | current user list
-  become: yes
+  become: true
   become_user: "{{ omero_user_system }}"
   command: >
     {{ omero_user_bin_omero }} user -C
@@ -14,15 +14,15 @@
     -q
     --style json
   register: usercmd
-  check_mode: no
-  changed_when: False
+  check_mode: false
+  changed_when: false
 
 - name: omero user | set user list var
   set_fact:
     omero_user_list: "{{ usercmd.stdout | from_json }}"
 
 - name: omero user | create user
-  become: yes
+  become: true
   become_user: "{{ omero_user_system }}"
   command: >
     {{ omero_user_bin_omero }} user -C
@@ -39,4 +39,4 @@
     (omero_user_list | selectattr('login', 'equalto', item.login) |
       list | length) < 1
   with_items:
-  - "{{ omero_user_create }}"
+    - "{{ omero_user_create }}"
