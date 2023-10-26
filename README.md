@@ -1,7 +1,8 @@
 OMERO user
 ==========
 
-[![Build Status](https://travis-ci.org/ome/ansible-role-omero-user.svg)](https://travis-ci.org/ome/ansible-role-omero-user)
+[![Actions Status](https://github.com/ome/ansible-role-omero-user/workflows/Molecule/badge.svg)](https://github.com/ome/ansible-role-omero-user/actions)
+
 [![Ansible Role](https://img.shields.io/ansible/role/41097.svg)](https://galaxy.ansible.com/ome/omero_user/)
 
 Create OMERO user accounts and groups.
