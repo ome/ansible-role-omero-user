@@ -4,14 +4,14 @@ galaxy_info:
   description: Create OMERO user accounts and groups
   company: Open Microscopy Environment
   license: BSD
-  min_ansible_version: 2.6
+  min_ansible_version: 2.10
   platforms:
     - name: EL
       versions:
-        - 7
+        - 9
     - name: Ubuntu
       versions:
-        - focal
+        - jammy
   namespace: ome
   role_name: omero_user
   galaxy_tags: []
