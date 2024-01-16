@@ -30,6 +30,13 @@ jobs:
         scenario: ${{fromJson(needs.list-scenarios.outputs.matrix)}}
     steps:
       - uses: actions/checkout@v4
+      - name: Read the role name
+        id: role-name
+        run: |
+          name=$(grep 'role_name' meta/main.yml | sed -r 's/^[^:]*:(.*)$/\1/' | tr -d '[:space:]')
+          echo "rolename=$name" >> "$GITHUB_OUTPUT"
+      - name: check
+
       - uses: actions/setup-python@v4
         with:
           python-version: '3.9'
@@ -59,4 +66,4 @@ jobs:
         with:
           galaxy-api-key: ${{ secrets.GALAXY_API_KEY }}
           galaxy-version: ${{ github.ref_name }}
-          role-name: ${{ steps.role-name.outputs.rolename }}
+          role-name: -
